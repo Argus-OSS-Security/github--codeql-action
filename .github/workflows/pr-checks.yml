@@ -1,15 +1,16 @@
 name: PR Checks
 
-on:
-  push:
-    branches:
-      - "main"
-      - "releases/v*"
-  pull_request:
-  merge_group:
-    types: [checks_requested]
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - "main"
+#       - "releases/v*"
+#   pull_request:
+#   merge_group:
+#     types: [checks_requested]
+#   workflow_dispatch:
+# 
 concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' || false }}
   group: ${{ github.workflow }}-${{ github.ref }}

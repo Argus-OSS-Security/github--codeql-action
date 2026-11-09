@@ -1,11 +1,12 @@
 name: Check Expected Release Files
 
-on:
-  pull_request:
-    paths:
-      - .github/workflows/check-expected-release-files.yml
-      - src/defaults.json
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - .github/workflows/check-expected-release-files.yml
+#       - src/defaults.json
+# 
 concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' || false }}
   group: ${{ github.workflow }}-${{ github.ref }}

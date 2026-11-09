@@ -7,21 +7,22 @@ name: PR Check - Build mode none
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GO111MODULE: auto
-on:
-  push:
-    branches:
-      - main
-      - releases/v*
-  pull_request: {}
-  merge_group:
-    types:
-      - checks_requested
-  schedule:
-    - cron: "0 5 * * *"
-  workflow_dispatch:
-    inputs: {}
-  workflow_call:
-    inputs: {}
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#       - releases/v*
+#   pull_request: {}
+#   merge_group:
+#     types:
+#       - checks_requested
+#   schedule:
+#     - cron: "0 5 * * *"
+#   workflow_dispatch:
+#     inputs: {}
+#   workflow_call:
+#     inputs: {}
 defaults:
   run:
     shell: bash

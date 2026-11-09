@@ -1,22 +1,23 @@
 name: Rollback release
-on:
-  # You can trigger this workflow via workflow dispatch to start a rollback.
-  # This will create a draft release that mirrors the release for `rollback-tag`.
-  workflow_dispatch:
-    inputs:
-      rollback-tag:
-        type: string
-        description: "The tag of an old release to roll-back to."
-        required: true
-  # Only for dry-runs of changes to the workflow.
-  push:
-    # Don't run dry-run on release branches, since that's unnecessary.
-    branches-ignore:
-      - releases/v*
-    paths:
-      - .github/workflows/rollback-release.yml
-      - .github/actions/prepare-mergeback-branch/**
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   # You can trigger this workflow via workflow dispatch to start a rollback.
+#   # This will create a draft release that mirrors the release for `rollback-tag`.
+#   workflow_dispatch:
+#     inputs:
+#       rollback-tag:
+#         type: string
+#         description: "The tag of an old release to roll-back to."
+#         required: true
+#   # Only for dry-runs of changes to the workflow.
+#   push:
+#     # Don't run dry-run on release branches, since that's unnecessary.
+#     branches-ignore:
+#       - releases/v*
+#     paths:
+#       - .github/workflows/rollback-release.yml
+#       - .github/actions/prepare-mergeback-branch/**
+# 
 defaults:
   run:
     shell: bash

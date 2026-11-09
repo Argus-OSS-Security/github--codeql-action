@@ -1,16 +1,17 @@
 name: "CodeQL action"
 
-on:
-  push:
-    branches: [main, releases/v*]
-  pull_request:
-  merge_group:
-    types: [checks_requested]
-  schedule:
-    # Weekly on Sunday.
-    - cron: "30 1 * * 0"
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [main, releases/v*]
+#   pull_request:
+#   merge_group:
+#     types: [checks_requested]
+#   schedule:
+#     # Weekly on Sunday.
+#     - cron: "30 1 * * 0"
+#   workflow_dispatch:
+# 
 defaults:
   run:
     shell: bash

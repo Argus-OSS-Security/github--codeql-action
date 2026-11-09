@@ -7,41 +7,42 @@ name: PR Check - Local CodeQL bundle
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GO111MODULE: auto
-on:
-  push:
-    branches:
-      - main
-      - releases/v*
-  pull_request: {}
-  merge_group:
-    types:
-      - checks_requested
-  schedule:
-    - cron: "0 5 * * *"
-  workflow_dispatch:
-    inputs:
-      dotnet-version:
-        type: string
-        description: The version of .NET to install
-        required: false
-        default: 9.x
-      go-version:
-        type: string
-        description: The version of Go to install
-        required: false
-        default: ">=1.21.0"
-  workflow_call:
-    inputs:
-      dotnet-version:
-        type: string
-        description: The version of .NET to install
-        required: false
-        default: 9.x
-      go-version:
-        type: string
-        description: The version of Go to install
-        required: false
-        default: ">=1.21.0"
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#       - releases/v*
+#   pull_request: {}
+#   merge_group:
+#     types:
+#       - checks_requested
+#   schedule:
+#     - cron: "0 5 * * *"
+#   workflow_dispatch:
+#     inputs:
+#       dotnet-version:
+#         type: string
+#         description: The version of .NET to install
+#         required: false
+#         default: 9.x
+#       go-version:
+#         type: string
+#         description: The version of Go to install
+#         required: false
+#         default: ">=1.21.0"
+#   workflow_call:
+#     inputs:
+#       dotnet-version:
+#         type: string
+#         description: The version of .NET to install
+#         required: false
+#         default: 9.x
+#       go-version:
+#         type: string
+#         description: The version of Go to install
+#         required: false
+#         default: ">=1.21.0"
 defaults:
   run:
     shell: bash

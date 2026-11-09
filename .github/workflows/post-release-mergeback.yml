@@ -6,18 +6,19 @@
 #    Typically, this is two commits – one to update the version number and one to rebuild.
 name: Tag release and merge back
 
-on:
-  workflow_dispatch:
-    inputs:
-      baseBranch:
-        description: "The base branch to merge into"
-        default: main
-        required: false
-
-  push:
-    branches:
-      - releases/v*
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       baseBranch:
+#         description: "The base branch to merge into"
+#         default: main
+#         required: false
+# 
+#   push:
+#     branches:
+#       - releases/v*
+# 
 defaults:
   run:
     shell: bash

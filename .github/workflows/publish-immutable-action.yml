@@ -1,11 +1,12 @@
 name: "Publish Immutable Action Version"
 
-on:
-  push:
-    tags:
-      # Match version tags, but not the major version tags.
-      - "v[0-9]+.**"
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     tags:
+#       # Match version tags, but not the major version tags.
+#       - "v[0-9]+.**"
+# 
 defaults:
   run:
     shell: bash

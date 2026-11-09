@@ -7,31 +7,32 @@ name: PR Check - Build mode autobuild
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GO111MODULE: auto
-on:
-  push:
-    branches:
-      - main
-      - releases/v*
-  pull_request: {}
-  merge_group:
-    types:
-      - checks_requested
-  schedule:
-    - cron: "0 5 * * *"
-  workflow_dispatch:
-    inputs:
-      java-version:
-        type: string
-        description: The version of Java to install
-        required: false
-        default: "17"
-  workflow_call:
-    inputs:
-      java-version:
-        type: string
-        description: The version of Java to install
-        required: false
-        default: "17"
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#       - releases/v*
+#   pull_request: {}
+#   merge_group:
+#     types:
+#       - checks_requested
+#   schedule:
+#     - cron: "0 5 * * *"
+#   workflow_dispatch:
+#     inputs:
+#       java-version:
+#         type: string
+#         description: The version of Java to install
+#         required: false
+#         default: "17"
+#   workflow_call:
+#     inputs:
+#       java-version:
+#         type: string
+#         description: The version of Java to install
+#         required: false
+#         default: "17"
 defaults:
   run:
     shell: bash

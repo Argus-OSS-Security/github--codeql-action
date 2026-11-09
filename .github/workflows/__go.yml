@@ -7,19 +7,20 @@ name: Manual Check - go
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GO111MODULE: auto
-on:
-  workflow_dispatch:
-    inputs:
-      dotnet-version:
-        type: string
-        description: The version of .NET to install
-        required: false
-        default: 9.x
-      go-version:
-        type: string
-        description: The version of Go to install
-        required: false
-        default: ">=1.21.0"
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       dotnet-version:
+#         type: string
+#         description: The version of .NET to install
+#         required: false
+#         default: 9.x
+#       go-version:
+#         type: string
+#         description: The version of Go to install
+#         required: false
+#         default: ">=1.21.0"
 jobs:
   go-custom-queries:
     name: "Go: Custom queries"
